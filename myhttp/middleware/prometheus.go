@@ -10,7 +10,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promauto"
 )
 
-func BaseMetrics() Midddleware {
+func BaseMetrics() myhttp.Midddleware {
 	httpRequestsTotal := promauto.NewCounterVec(
 		prometheus.CounterOpts{
 			Name: "http_requests_total",

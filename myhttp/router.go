@@ -2,23 +2,21 @@ package myhttp
 
 import (
 	"net/http"
-
-	"github.com/akemoon/golib/myhttp/middleware"
 )
 
 type Router struct {
 	mux *http.ServeMux
-	mws []middleware.Midddleware
+	mws []Midddleware
 }
 
 func NewRouter() *Router {
 	return &Router{
 		mux: http.NewServeMux(),
-		mws: []middleware.Midddleware{},
+		mws: []Midddleware{},
 	}
 }
 
-func (r *Router) Use(mws ...middleware.Midddleware) *Router {
+func (r *Router) Use(mws ...Midddleware) *Router {
 	r.mws = append(r.mws, mws...)
 	return r
 }
